@@ -1,0 +1,43 @@
+.main-page, .settings-page{
+  max-width: 750px;
+  margin: 0 auto;
+  button{
+    width: 100%;
+  }
+  h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .questions-section{
+    margin: 20px 0;
+  }
+  .box{
+    padding: 8px;
+    text-align: center;
+    .inner-box{
+      border: 1px solid #000000;
+      border-radius: 3rem;
+      padding: 8px 0;
+      &.bg-success{
+        border: 1px solid #28a745!important;
+      }
+      &.bg-danger{
+
+      }
+      p{
+        margin-bottom: 0;
+      }
+      label{
+        width: 100%;
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+    }
+    input{
+      display: none;
+    }
+  }
+}
