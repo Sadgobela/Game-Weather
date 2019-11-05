@@ -12,7 +12,7 @@ import './main.scss'
 class Main extends React.Component {
     state = {
         currentIndex: 0,
-        currentAnswerId: null,
+        currentAnswerId: null
     };
 
     componentDidMount() {
@@ -51,7 +51,6 @@ class Main extends React.Component {
     };
 
 
-
     toCelsius = (fahr) => {
         console.log(fahr);
         return Math.round((fahr - 32) * ( 5 / 9) )
@@ -63,9 +62,9 @@ class Main extends React.Component {
 
     render() {
         const {countriesList, tempType} = this.props;
-        const {currentAnswerId, currentIndex} = this.state;
+        const {currentAnswerId, currentIndex, currentAnswer = true} = this.state;
         const data = (countriesList && countriesList[currentIndex]) ? countriesList[currentIndex].map(item => {
-            return {...item, temp: tempType === 'C' ? this.toCelsius(item.temp)  : item.temp}
+            return {...item, temp: tempType === 'C' ? this.toCelsius(item.temp)  : Math.round(item.temp)}
         }) : null;
 
         return (

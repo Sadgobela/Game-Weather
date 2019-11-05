@@ -1,4 +1,5 @@
 import {chunk} from 'lodash';
+import actionTypes from '../actions/actionTypes';
 
 const initialState = {
     countriesList : [],
@@ -7,7 +8,7 @@ const initialState = {
 
 function countriesReducer(state = initialState, action) {
     switch (action.type) {
-        case 'COUNTRY_LIST_LOAD_FULFILLED':
+        case actionTypes.COUNTRY_LIST_LOAD_FULFILLED:
             const list = action.payload.list.map(item => ({
                 id: item.id,
                 name: item.name,
@@ -18,7 +19,7 @@ function countriesReducer(state = initialState, action) {
                 ...state,
                 countriesList: chunk(list, 2)
             };
-        case 'TEMP_TYPE_CHANGE_FULFILLED':
+        case actionTypes.TEMP_TYPE_CHANGE_FULFILLED:
             return {
                 ...state,
                 tempType: action.payload,

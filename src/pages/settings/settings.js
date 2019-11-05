@@ -41,6 +41,7 @@ class Settings extends React.Component {
                             </label>
                         </div>
                     </div>
+                    <h1>History</h1>
                     {answers.map(answer => {
                         return (
                             <div className="row mt-4">
@@ -49,7 +50,7 @@ class Settings extends React.Component {
                                         <div className='box col-6'>
                                             <div className={`inner-box ${answer.answerId === city.id ? (answer.correctAnswerId === city.id ? 'bg-success': 'bg-danger'): ''}`}>
                                                 <p>{city.name},{city.countryName}</p>
-                                                <p>{(tempType === 'C' ? this.toCelsius(city.temp): city.temp ) + ' '+tempType}</p>
+                                                <p>{(tempType === 'C' ? this.toCelsius(city.temp): Math.round(city.temp) ) + ' '+tempType}</p>
                                             </div>
                                         </div>
                                     )
